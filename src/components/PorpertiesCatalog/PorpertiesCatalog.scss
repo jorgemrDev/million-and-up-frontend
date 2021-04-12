@@ -1,0 +1,15 @@
+.properties-catalog {
+  display: flex !important;
+  justify-content: center !important;
+  margin-top: 25px;
+  margin-right: 5px;
+
+  .ant-card-cover {
+    img {
+      height: 300px !important;
+    }
+  }
+  .ant-card-meta-title {
+    text-align: center;
+  }
+}
