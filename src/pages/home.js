@@ -74,14 +74,12 @@ export default function Home() {
       if (isValid) {
         const response = await fetch(
           `${API_URL}Property?PageSize=10&TotalPages=10&TotalCount=1&PageNumber=1&SearchKeyWord=${searchFilters.SearchKeyWord}&PriceFrom=${searchFilters.priceFrom}&PriceTo=${searchFilters.priceTo}&YearFrom=${searchFilters.yearFrom}&YearTo=${searchFilters.yearTo}&CurrentPage=${page}`,
-, {
-  method: "GET",
-  headers: {
-    // the content type header value is usually auto-set
-    // depending on the request body
-    “Authorization:" `Bearer ${API_KEY}`
-  }
-});
+          {
+            headers: {
+              Authorization: `Bearer ${API_KEY}`,
+            },
+          }
+        );
         const result = await response.json();
         setList(result);
         setStatus(STATUS.COMPLETED);
